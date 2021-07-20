@@ -1,27 +1,44 @@
+"Display
+set number         "Show line numbers
+set relativenumber "Make line numbers relative
+set colorcolumn=80 "Show vertical guide
+set laststatus=2   "Always show status line
+colorscheme forest-night
+
 "Tab behavior
-set smartindent "Autoindent
-set tabstop=4 "Set tab width
-set shiftwidth=4 "Set indent width
-set expandtab "Convert tab to spaces
-set softtabstop=4 "Treat groups of spaces like tabs
+set smartindent
+set tabstop=4     "Tab width
+set shiftwidth=4  "Indent width
+set softtabstop=4 "Number of spaces a tab counts for
+set expandtab     "Convert tab to spaces
+
+"Searching
+set ignorecase "Make searching case-insensitive
+set smartcase  "Become case-sensitive if capital letters are used
+set incsearch  "Search as you type
 
 "Key bindings to avoid pressing Esc
 inoremap kj <Esc>
 cnoremap kj <Esc>
 
-set number "Show line numbers
-set relativenumber "Make line numbers relative
-set laststatus=2 "Always show status line
-set ignorecase "Make searching case-insensitive
-set smartcase "Become case-sensitive if capitol letters are used
-set incsearch "Search as you type
+"Miscellaneous
+set shortmess+=I               "Disable default Vim startup message 
 set backspace=indent,eol,start "Make backspace behavior more intuitive
-set shortmess+=I "Disable default Vim startup message 
-nmap Q <Nop> "prevent entering Ex mode
-set colorcolumn=80 "Show vertical guide
-colorscheme forest-night "Set colorscheme
+nmap Q <Nop>                   "prevent entering Ex mode
 
-"Prevent habit of using arrow keys
+"Use Vim as a Word Processor
+function! Writer()
+    setlocal spell spelllang=en_us
+    setlocal textwidth=79     "column after which text is broken
+    setlocal formatoptions=t1 "auto-wrap text using textwidth (t) and
+                              "don't break a line after a single character (1)
+    setlocal linebreak
+    setlocal nonumber
+    setlocal norelativenumber
+endfunction
+com! WR call Writer()
+
+"Prevent use of arrow keys
 nnoremap <Left>  :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up>    :echoe "Use k"<CR>
