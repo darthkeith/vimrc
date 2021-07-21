@@ -26,17 +26,22 @@ set shortmess+=I               "Disable default Vim startup message
 set backspace=indent,eol,start "Make backspace behavior more intuitive
 nmap Q <Nop>                   "prevent entering Ex mode
 
-"Use Vim as a Word Processor
+"Use Vim as a word processor
 function! Writer()
     setlocal spell spelllang=en_us
     setlocal textwidth=79     "column after which text is broken
     setlocal formatoptions=t1 "auto-wrap text using textwidth (t) and
                               "don't break a line after a single character (1)
     setlocal linebreak
+endfunction
+com! WR call Writer()
+
+"Remove all line numbers
+function! NoNums()
     setlocal nonumber
     setlocal norelativenumber
 endfunction
-com! WR call Writer()
+com! NN call NoNums()
 
 "Prevent use of arrow keys
 nnoremap <Left>  :echoe "Use h"<CR>
