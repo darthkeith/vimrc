@@ -36,7 +36,7 @@ set backspace=indent,eol,start "Make backspace behavior more intuitive
 "Use Vim as a word processor
 function! Writer()
     setlocal spell spelllang=en_us "enable spellcheck
-    setlocal textwidth=79     "column after which text is broken
+    setlocal textwidth=79     "set column after which text is broken
     setlocal formatoptions=t1 "auto-wrap text using textwidth (t) and
                               "don't break a line after a single character (1)
 endfunction
@@ -55,3 +55,4 @@ function! Nums()
     setlocal relativenumber
 endfunction
 com! NUM call Nums()
+
