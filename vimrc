@@ -18,7 +18,7 @@ syntax enable
 colorscheme forest-night
 
 "Tab behavior
-set smartindent
+set autoindent    "Copy indent from current line when starting new line
 set tabstop=4     "Tab width
 set shiftwidth=4  "Indent width
 set softtabstop=4 "Number of spaces a tab counts for
