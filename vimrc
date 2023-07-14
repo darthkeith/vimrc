@@ -5,9 +5,6 @@
     "prevent entering Ex mode
     nmap Q <Nop>
 
-"Macros
-let @r = 'wb"0Plde' "Replace word with contents of most recent yank
-
 "Display
 set number         "Show line numbers
 set relativenumber "Make line numbers relative (except current line)
@@ -41,18 +38,4 @@ function! Writer()
                               "don't break a line after a single character (1)
 endfunction
 com! WR call Writer()
-
-"Remove all line numbers
-function! NoNums()
-    setlocal nonumber
-    setlocal norelativenumber
-endfunction
-com! NN call NoNums()
-
-"Restore line numbers
-function! Nums()
-    setlocal number
-    setlocal relativenumber
-endfunction
-com! NUM call Nums()
 
