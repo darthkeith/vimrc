@@ -12,7 +12,7 @@ set colorcolumn=80 "Show vertical guide
 set laststatus=2   "Always show status line
 set linebreak      "Break wrapped lines between words
 syntax enable
-colorscheme forest-night
+colorscheme $VIM_COLOR_SCHEME "Use color scheme stored in environment variable
 
 "Tab behavior
 set autoindent    "Copy indent from current line when starting new line
